@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Guess Master - Number Guessing Game</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- SVG Background Patterns -->
+    <div class="background-patterns">
+        <svg class="pattern-1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="10" cy="10" r="1.5" fill="#fce7f3" opacity="0.6"/>
+                </pattern>
+                <pattern id="hearts" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+                    <path d="M15 8c-2-3-4-5-7-5s-5 2-5 5c0 5 7 10 12 10s12-5 12-10c0-3-2-5-5-5s-5 2-7 5z" fill="#fbbf24" opacity="0.3"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)"/>
+        </svg>
+        <svg class="pattern-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="waves" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+                    <path d="M0 25 Q12.5 15 25 25 T50 25" stroke="#f9a8d4" stroke-width="2" fill="none" opacity="0.4"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#waves)"/>
+        </svg>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">
+                <span class="title-icon">🎯</span>
+                AI Guess Master
+            </h1>
+            <p class="subtitle">Can you guess the secret number with AI assistance?</p>
+        </header>
+
+        <!-- Game Container -->
+        <div class="game-container">
+            <!-- Game Status -->
+            <div class="game-status" id="gameStatus">
+                <div class="status-card">
+                    <div class="status-icon">🎮</div>
+                    <div class="status-text">Ready to play!</div>
+                </div>
+            </div>
+
+            <!-- Game Controls -->
+            <div class="game-controls">
+                <button class="btn btn-primary" id="startBtn">
+                    <span class="btn-icon">🚀</span>
+                    Start New Game
+                </button>
+                <button class="btn btn-secondary" id="resetBtn" style="display: none;">
+                    <span class="btn-icon">🔄</span>
+                    Reset Game
+                </button>
+            </div>
+
+            <!-- Guess Input Section -->
+            <div class="guess-section" id="guessSection" style="display: none;">
+                <div class="input-container">
+                    <label for="guessInput" class="input-label">Enter your guess (1-100):</label>
+                    <div class="input-group">
+                        <input type="number" id="guessInput" class="guess-input" min="1" max="100" placeholder="Enter number...">
+                        <button class="btn btn-guess" id="submitGuess">
+                            <span class="btn-icon">🎲</span>
+                            Guess!
+                        </button>
+                    </div>
+                    <div class="hint-toggle">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="getHint" checked>
+                            <span class="checkmark"></span>
+                            Get AI hint
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Results -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="result-card" id="resultCard">
+                    <div class="result-icon" id="resultIcon">🎯</div>
+                    <div class="result-message" id="resultMessage">Make your first guess!</div>
+                    <div class="result-details" id="resultDetails"></div>
+                </div>
+            </div>
+
+            <!-- AI Hint Section -->
+            <div class="hint-section" id="hintSection" style="display: none;">
+                <div class="hint-card">
+                    <div class="hint-icon">🤖</div>
+                    <div class="hint-title">AI Assistant</div>
+                    <div class="hint-text" id="hintText">Ready to help you win!</div>
+                </div>
+            </div>
+
+            <!-- Game History -->
+            <div class="history-section" id="historySection" style="display: none;">
+                <div class="history-card">
+                    <div class="history-header">
+                        <span class="history-icon">📊</span>
+                        <span class="history-title">Your Guesses</span>
+                    </div>
+                    <div class="history-list" id="historyList"></div>
+                </div>
+            </div>
+
+            <!-- Attempts Counter -->
+            <div class="attempts-counter" id="attemptsCounter" style="display: none;">
+                <div class="attempts-card">
+                    <span class="attempts-icon">🎯</span>
+                    <span class="attempts-text">Attempts: <span id="attemptsCount">0</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Win Celebration -->
+        <div class="celebration" id="celebration" style="display: none;">
+            <div class="celebration-content">
+                <div class="celebration-icon">🎉</div>
+                <div class="celebration-title">Congratulations!</div>
+                <div class="celebration-message" id="celebrationMessage">You found the number!</div>
+                <button class="btn btn-primary" id="playAgainBtn">
+                    <span class="btn-icon">🎮</span>
+                    Play Again
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <div class="loading-text">Processing...</div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
