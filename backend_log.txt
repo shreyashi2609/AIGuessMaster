@@ -1,0 +1,53 @@
+🚀 Backend server starting...
+🔗 Backend will be available at: http://localhost:5000
+🎮 Frontend should connect from: http://localhost:3000
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.2:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 132-491-319
+127.0.0.1 - - [11/Jan/2026 12:50:13] "POST /start HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jan/2026 12:50:13] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jan/2026 12:50:13] "[31m[1mPOST /guess HTTP/1.1[0m" 400 -
+127.0.0.1 - - [11/Jan/2026 12:50:14] "[31m[1mPOST /guess HTTP/1.1[0m" 400 -
+127.0.0.1 - - [11/Jan/2026 12:50:14] "[31m[1mPOST /guess HTTP/1.1[0m" 400 -
+127.0.0.1 - - [11/Jan/2026 12:50:14] "[31m[1mPOST /guess HTTP/1.1[0m" 400 -
+127.0.0.1 - - [11/Jan/2026 12:50:14] "[31m[1mPOST /guess HTTP/1.1[0m" 400 -
+127.0.0.1 - - [11/Jan/2026 12:50:14] "[31m[1mPOST /guess HTTP/1.1[0m" 400 -
+127.0.0.1 - - [11/Jan/2026 12:50:14] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jan/2026 12:50:14] "POST /reset HTTP/1.1" 200 -
+ * Detected change in '/app/backend/test_backend.py', reloading
+🚀 Backend server starting...
+🔗 Backend will be available at: http://localhost:5000
+🎮 Frontend should connect from: http://localhost:3000
+Game started! Secret number: 62, Session ID: No SID
+Guess request received. Session data: {}
+No active game found in session
+Guess request received. Session data: {}
+No active game found in session
+Guess request received. Session data: {}
+No active game found in session
+Guess request received. Session data: {}
+No active game found in session
+Guess request received. Session data: {}
+No active game found in session
+Guess request received. Session data: {}
+No active game found in session
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 132-491-319
+127.0.0.1 - - [11/Jan/2026 12:50:36] "POST /start HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jan/2026 12:50:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jan/2026 12:50:36] "POST /guess HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jan/2026 12:50:36] "POST /guess HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jan/2026 12:50:36] "POST /guess HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jan/2026 12:50:36] "POST /guess HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jan/2026 12:50:36] "POST /guess HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jan/2026 12:50:36] "POST /guess HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jan/2026 12:50:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jan/2026 12:50:36] "POST /reset HTTP/1.1" 200 -
