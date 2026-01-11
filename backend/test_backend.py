@@ -3,11 +3,12 @@ import json
 
 # Base URL for the Flask app
 BASE_URL = 'http://localhost:5000'
+session = requests.Session()
 
 def test_start_game():
     """Test the /start endpoint"""
     print("Testing /start endpoint...")
-    response = requests.post(f'{BASE_URL}/start')
+    response = session.post(f'{BASE_URL}/start')
     
     if response.status_code == 200:
         data = response.json()
@@ -29,7 +30,7 @@ def test_make_guess(secret_number, guess, get_hint=False):
         'get_hint': get_hint
     }
     
-    response = requests.post(f'{BASE_URL}/guess', json=payload)
+    response = session.post(f'{BASE_URL}/guess', json=payload)
     
     if response.status_code == 200:
         data = response.json()
@@ -50,7 +51,7 @@ def test_make_guess(secret_number, guess, get_hint=False):
 def test_game_status():
     """Test the /status endpoint"""
     print("\nTesting /status endpoint...")
-    response = requests.get(f'{BASE_URL}/status')
+    response = session.get(f'{BASE_URL}/status')
     
     if response.status_code == 200:
         data = response.json()
@@ -67,7 +68,7 @@ def test_game_status():
 def test_reset_game():
     """Test the /reset endpoint"""
     print("\nTesting /reset endpoint...")
-    response = requests.post(f'{BASE_URL}/reset')
+    response = session.post(f'{BASE_URL}/reset')
     
     if response.status_code == 200:
         data = response.json()
